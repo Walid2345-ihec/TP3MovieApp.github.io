@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="header">
+        <h1>My Wishlist</h1>
+        <button (click)="backToMovieList()">Back to movie list</button>
+    </div>
+
+    @if (movieService.wishList().length === 0) {
+        <p class="empty">Your wishlist is empty.</p>
+    }
+
+    <div class="movies">
+        @for (movie of movieService.wishList(); track movie.id) {
+            <div class="movie-card">
+                <img [src]="`https://image.tmdb.org/t/p/original/${movie.poster_path}`" [alt]="movie.title" (click)="navigateTo(movie)">
+                <div class="movie-detail">
+                    <h2>{{ movie.title }}</h2>
+                    <button (click)="removeFromWishList(movie.id)">Remove</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

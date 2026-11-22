@@ -1,0 +1,108 @@
+:host {
+  display: block;
+  background: #000;
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 2rem;
+  align-items: flex-start;
+}
+
+/* ----- Affiche ----- */
+.poster-container {
+  flex: 0 0 33%;
+}
+
+.poster-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ----- Détails ----- */
+.details-container {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 1.8rem;
+  padding: 3rem 1rem 1rem;
+}
+
+.detail-item {
+  flex: 0 0 calc(33.333% - 1.2rem);
+  min-height: 190px;
+  background: #000;
+  border: 3px solid #b8860b;
+  box-shadow: 0 0 15px 5px rgba(255, 191, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.detail-item h3 {
+  color: #ffbf00;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.detail-item p {
+  color: #fff;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+/* ----- Résumé ----- */
+.overview-container {
+  flex: 0 0 100%;
+}
+
+.overview-container .detail {
+  font-size: 1.3rem;
+  line-height: 2;
+  text-align: justify;
+  color: #eee;
+  margin: 0;
+}
+
+/* ----- Boutons ----- */
+.button-container {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.button-container button {
+  background: #000;
+  color: #ffbf00;
+  border: 2px solid #b8860b;
+  box-shadow: 0 0 10px 2px rgba(255, 191, 0, 0.5);
+  padding: 0.8rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.button-container button:hover {
+  background: #ffbf00;
+  color: #000;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .container { flex-direction: column; }
+  .poster-container { flex: none; width: 60%; margin: 0 auto; }
+  .detail-item { flex: 0 0 calc(50% - 1rem); }
+}
